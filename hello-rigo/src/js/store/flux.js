@@ -1,18 +1,9 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			characters: [],
+			planets: [],
+			favorites: []
 		},
 		actions: {
 			changeColor: (index, color) => {
@@ -28,6 +19,18 @@ const getState = ({ getStore, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getCharacters: () => {
+				fetch("https://swapi.co/api/people")
+					.then(response => response.json())
+					.then(data => setStore({ characters: data.results }))
+					.catch(console.log("GET CHARACTERS ERROR"));
+			},
+			getPlanets: () => {
+				fetch("https://swapi.co/api/planets")
+					.then(response => response.json())
+					.then(data => setStore({ planets: data.results }))
+					.catch(console.log("GET PLANET ERROR"));
 			}
 		}
 	};

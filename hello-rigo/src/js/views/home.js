@@ -1,18 +1,23 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
+import { Card } from "../component/card.js";
+import { Context } from "../store/appContext";
 
 export class Home extends React.Component {
 	render() {
 		return (
 			<div className="text-center mt-5">
-				<h1>Hello Rigo!</h1>
-				<p>
-					<img src={rigoImage} />
-				</p>
-				<a href="#" className="btn btn-success">
-					If you see this green button, bootstrap is working
-				</a>
+				<div className="row">
+					<div className="column">
+						<Context.Consumer>
+							{({ store }) => {
+								console.log(store.characters);
+								console.log(store.planets);
+								return <Card />;
+							}}
+						</Context.Consumer>
+					</div>
+				</div>
 			</div>
 		);
 	}

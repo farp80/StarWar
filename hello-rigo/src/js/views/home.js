@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/home.scss";
-import { Card } from "../component/card.js";
+import { CardE } from "../component/card.js";
 import { Context } from "../store/appContext";
 
 export class Home extends React.Component {
@@ -13,7 +13,7 @@ export class Home extends React.Component {
 							{({ store }) => {
 								console.log(store.characters);
 								console.log(store.planets);
-								return <Card />;
+								return <CardE />;
 							}}
 						</Context.Consumer>
 					</div>

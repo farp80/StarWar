@@ -1,15 +1,21 @@
 import React from "react";
 import fidelity from "../../img/unnamed.jpg";
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 
-export const Card = () => (
-	<div className="card" style={{ width: 18 + "rem" }}>
-		<img className="card-img-top" src={fidelity} alt="Card image cap" />
-		<div className="card-body">
-			<h5 className="card-title">Card title</h5>
-			<p className="card-text">FIDEL</p>
-			<a href="#" className="btn btn-primary">
-				GO
-			</a>
+export const CardE = () => {
+	return (
+		<div>
+			<Card style={{ width: 18 + "rem" }}>
+				<CardImg top width="100%" src={fidelity} />
+				<CardBody>
+					<CardTitle>Card title</CardTitle>
+					<CardSubtitle>Card subtitle</CardSubtitle>
+					<CardText>
+						Some quick example text to build on the card title and make up the bulk of the card content.
+					</CardText>
+					<Button color="primary">Learn more!</Button>
+				</CardBody>
+			</Card>
 		</div>
-	</div>
-);
+	);
+};

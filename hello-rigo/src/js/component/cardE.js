@@ -3,6 +3,8 @@ import collectionOfSw from "../../img/collectionOfSw.jpg";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import PropTypes from "prop-types";
 import "../../styles/home.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export const CardE = props => {
 	return (
@@ -11,7 +13,9 @@ export const CardE = props => {
 				<CardImg top width="50%" src={collectionOfSw} />
 				<CardBody>
 					<CardTitle>
-						<div>{props.settings.name}</div>
+						<div>
+							<strong>{props.settings.name}</strong>
+						</div>
 					</CardTitle>
 					<CardText>
 						<div>
@@ -22,7 +26,7 @@ export const CardE = props => {
 					</CardText>
 					<Button color="primary">Learn more!</Button>
 					<div className="favorite">
-						<i className="fal fa-heart" />
+						<FontAwesomeIcon icon={faHeart} />
 					</div>
 				</CardBody>
 			</Card>

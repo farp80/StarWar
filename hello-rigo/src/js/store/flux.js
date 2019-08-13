@@ -24,13 +24,17 @@ const getState = ({ getStore, setStore }) => {
 				fetch("https://swapi.co/api/people")
 					.then(response => response.json())
 					.then(data => setStore({ characters: data.results }))
-					.catch(console.log("GET CHARACTERS ERROR"));
+					.catch(error => {
+						console.log(error);
+					});
 			},
 			getPlanets: () => {
 				fetch("https://swapi.co/api/planets")
 					.then(response => response.json())
 					.then(data => setStore({ planets: data.results }))
-					.catch(console.log("GET PLANET ERROR"));
+					.catch(error => {
+						console.log(error);
+					});
 			}
 		}
 	};

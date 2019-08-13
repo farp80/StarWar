@@ -7,7 +7,7 @@ export class Navbar extends React.Component {
 		return (
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
-					<img src={starWar} width="80" height="60" />
+					<img src={starWar} width="80" height="60" float="left" />
 				</Link>
 				{/*<div className="ml-auto">
 					<Link to="/demo" />*/}

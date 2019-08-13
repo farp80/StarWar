@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import starWar from "../../img/Star_war.jpg";
+import "../../styles/home.scss";
 
 export class Navbar extends React.Component {
 	render() {
 		return (
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
-					<img src={starWar} width="80" height="60" float="left" />
+					<img src={starWar} width="80" height="60" />
 				</Link>
 				{/*<div className="ml-auto">
 					<Link to="/demo" />*/}

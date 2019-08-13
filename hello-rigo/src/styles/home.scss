@@ -3,6 +3,24 @@ h1{
     float: left !important;
 }
 
+.noBullets{
+    list-style-type: none;
+    margin-left: 0px;
+}
+
 .inlineBlock{
     display: inline-block !important;
+}
+
+.right{
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.favorite{
+    border: 2px solid orange;
+    border-radius: 10px;
+    float: right;
+    height: 40px;
+    width: 40px;
 }

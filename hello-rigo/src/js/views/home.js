@@ -18,7 +18,7 @@ export class Home extends React.Component {
 							return (
 								<CardGroup>
 									{store.characters.map((item, index) => {
-										console.log(item.name + " |" + item.hair_color);
+										console.log(item.name + " |" + item.gender);
 										let props = {
 											name: item.name,
 											gender: item.gender,
@@ -36,8 +36,3 @@ export class Home extends React.Component {
 		);
 	}
 }
-
-Home.propTypes = {
-	key: PropTypes.string,
-	settings: PropTypes.object
-};

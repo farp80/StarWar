@@ -1,21 +1,29 @@
 import React from "react";
-import fidelity from "../../img/unnamed.jpg";
+import collectionOfSw from "../../img/collectionOfSw.jpg";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import PropTypes from "prop-types";
+import "../../styles/home.scss";
 
 export const CardE = props => {
 	return (
-		<div>
+		<div className="right">
 			<Card style={{ width: 18 + "rem" }}>
-				<CardImg top width="100%" src={fidelity} />
+				<CardImg top width="50%" src={collectionOfSw} />
 				<CardBody>
-					<CardTitle>{(name = props.name)}</CardTitle>
+					<CardTitle>
+						<div>{props.settings.name}</div>
+					</CardTitle>
 					<CardText>
-						<p>{(gender = props.gender)}</p>
-						<p>{(eyeColor = props.eyeColor)}</p>
-						<p>{(hairColor = props.hairColor)}</p>
+						<div>
+							<div>Gender: {props.settings.gender}</div>
+							<div>Eye Color: {props.settings.eyeColor}</div>
+							<div>Hair Color: {props.settings.hairColor}</div>
+						</div>
 					</CardText>
 					<Button color="primary">Learn more!</Button>
+					<div className="favorite">
+						<i className="fal fa-heart" />
+					</div>
 				</CardBody>
 			</Card>
 		</div>
@@ -23,8 +31,5 @@ export const CardE = props => {
 };
 
 CardE.propTypes = {
-	name: PropTypes.string,
-	eyeColor: PropTypes.string,
-	hairColor: PropTypes.string,
-	gender: PropTypes.string
+	settings: PropTypes.object
 };

@@ -13,8 +13,8 @@ h1{
 }
 
 .right{
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
 
 .favorite{
@@ -25,4 +25,10 @@ h1{
     width: 40px;
     padding-left: 10px;
     padding-top: 5px;
+}
+
+.card-deck{
+    display: flex;
+    width: 5000px;
+    height: 400px;
 }

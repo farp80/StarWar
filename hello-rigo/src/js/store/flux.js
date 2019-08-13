@@ -35,7 +35,11 @@ const getState = ({ getStore, setStore }) => {
 					.catch(error => {
 						console.log(error);
 					});
-			}
+			},
+			addFavorite: () => {
+				console.log(store.characters);
+			},
+			removeFavorite: () => {}
 		}
 	};
 };

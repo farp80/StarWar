@@ -1,16 +1,16 @@
 import React from "react";
-import collectionOfSw from "../../img/collectionOfSw.jpg";
+import starWarPlanets from "../../img/starWarPlanets.jpg";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import PropTypes from "prop-types";
 import "../../styles/home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export const CardE = props => {
+export const CardHelperPlanets = props => {
 	return (
-		<div className="right">
+		<div>
 			<Card style={{ width: 18 + "rem" }}>
-				<CardImg top width="50%" src={collectionOfSw} />
+				<CardImg top width="50%" src={starWarPlanets} />
 				<CardBody>
 					<CardTitle>
 						<div>
@@ -19,14 +19,13 @@ export const CardE = props => {
 					</CardTitle>
 					<CardText>
 						<div>
-							<div>Gender: {props.settings.gender}</div>
-							<div>Eye Color: {props.settings.eyeColor}</div>
-							<div>Hair Color: {props.settings.hairColor}</div>
+							<div>Population: {props.settings.population + " habitants"}</div>
+							<div>Terrain: {props.settings.terrain}</div>
 						</div>
 					</CardText>
 					<Button color="primary">Learn more!</Button>
 					<div className="favorite">
-						<FontAwesomeIcon icon={faHeart} />
+						<i className="far fa-heart" />
 					</div>
 				</CardBody>
 			</Card>
@@ -34,6 +33,6 @@ export const CardE = props => {
 	);
 };
 
-CardE.propTypes = {
+CardHelperPlanets.propTypes = {
 	settings: PropTypes.object
 };

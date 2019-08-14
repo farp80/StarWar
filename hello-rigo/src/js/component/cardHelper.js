@@ -3,8 +3,8 @@ import collectionOfSw from "../../img/collectionOfSw.jpg";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import PropTypes from "prop-types";
 import "../../styles/home.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Context } from "../store/appContext";
 
 export const CardHelper = props => {
 	return (

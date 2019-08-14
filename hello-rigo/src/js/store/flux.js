@@ -36,8 +36,9 @@ const getState = ({ getStore, setStore }) => {
 						console.log(error);
 					});
 			},
-			addFavorite: () => {
-				console.log(store.characters);
+			addFavorite: name => {
+				const store = getStore();
+				console.log(name);
 			},
 			removeFavorite: () => {}
 		}

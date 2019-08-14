@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import "../../styles/home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export const CardHelperPlanets = props => {
 	return (
@@ -23,7 +24,9 @@ export const CardHelperPlanets = props => {
 							<div>Terrain: {props.settings.terrain}</div>
 						</div>
 					</CardText>
-					<Button color="primary">Learn more!</Button>
+					<Link to={"/singlePlanet/" + props.settings.index}>
+						<Button color="primary">Learn more!</Button>
+					</Link>
 					<div className="favorite">
 						<i className="far fa-heart" />
 					</div>

@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { SinglePlanet } from "./views/singlePlanet";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,10 +26,9 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/single/:theid" component={Single} />
-							{/*<Route path="/demo" component={Demo} />
-							<Route render={() => <h1>Not found!</h1>} />*/}
+							<Route path="/singlePlanet/:theid" component={SinglePlanet} />
+							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
-						<Footer />
 					</ScrollToTop>
 				</BrowserRouter>
 			</div>

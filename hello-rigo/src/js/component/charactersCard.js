@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export class CharactersCard extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container scrolling-wrapper">
 				<div className="card-deck">
 					<Context.Consumer>
 						{({ store, actions }) => {
@@ -27,9 +27,9 @@ export class CharactersCard extends React.Component {
 												</CardTitle>
 												<CardText>
 													<div>
-														<div>{"Gender:" + item.gender}</div>
-														<div>{"Eye Color:" + item.eyeColor}</div>
-														<div>{"Hair Color:" + item.hairColor}</div>
+														<div>{"Gender: " + item.gender}</div>
+														<div>{"Eye Color: " + item.eyeColor}</div>
+														<div>{"Hair Color: " + item.hairColor}</div>
 													</div>
 												</CardText>
 												<Link to={"/single/" + index}>

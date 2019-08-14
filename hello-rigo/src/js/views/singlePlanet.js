@@ -6,7 +6,7 @@ import { Jumbotron, Button } from "reactstrap";
 import { Card, CardImg } from "reactstrap";
 import "../../styles/home.scss";
 
-export class Single extends React.Component {
+export class SinglePlanet extends React.Component {
 	render() {
 		return (
 			<div className="top">
@@ -17,12 +17,12 @@ export class Single extends React.Component {
 								<div>
 									<div className="row">
 										<div className="col-4">
-											<img src="//placehold.it/200" alt="" width="200px" height="200px" />
+											<img src="//placehold.it/200" alt="" width="250px" height="250px" />
 										</div>
 										<div className="col-6">
 											<div className="card-block px-2">
 												<h4 className="card-title">
-													{store.characters[this.props.match.params.theid].name}
+													{store.planets[this.props.match.params.theid].name}
 												</h4>
 												<p className="card-text">
 													{"Carrie Fisher and George Lucas immortalized the character of Princess Leia with this " +
@@ -46,31 +46,33 @@ export class Single extends React.Component {
 											<div className="col-2">
 												{"Name"}
 												<div className="row">
-													{store.characters[this.props.match.params.theid].name}
+													{store.planets[this.props.match.params.theid].name}
 												</div>
 											</div>
 											<div className="col-2">
-												{"Gender"}
+												{"Population"}
 												<div className="row">
-													{store.characters[this.props.match.params.theid].gender}
+													{store.planets[this.props.match.params.theid].population +
+														" aliens"}
 												</div>
 											</div>
 											<div className="col-2">
-												{"Eye Color"}
+												{"Terrain"}
 												<div className="row">
-													{store.characters[this.props.match.params.theid].eye_color}
+													{store.planets[this.props.match.params.theid].terrain}
 												</div>
 											</div>
 											<div className="col-2">
-												{"Hair Color"}
+												{"Rotation Period"}
 												<div className="row">
-													{store.characters[this.props.match.params.theid].hair_color}
+													{store.planets[this.props.match.params.theid].rotation_period +
+														" days"}
 												</div>
 											</div>
 											<div className="col-2">
-												{"Height"}
+												{"Diameter"}
 												<div className="row">
-													{store.characters[this.props.match.params.theid].height + " cm"}
+													{store.planets[this.props.match.params.theid].diameter + " Kms"}
 												</div>
 											</div>
 										</div>
@@ -92,6 +94,6 @@ export class Single extends React.Component {
 	}
 }
 
-Single.propTypes = {
+SinglePlanet.propTypes = {
 	match: PropTypes.object
 };

@@ -17,6 +17,11 @@ h1{
     padding-bottom: 5px;
 }
 
+.top{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
 .favorite{
     border: 2px solid orange;
     border-radius: 10px;
@@ -35,4 +40,18 @@ h1{
 
 .display-4{
     color: black !important;
+}
+
+.fontCentered{
+    color:red;
+}
+
+.left{
+    padding-left:20px;
+}
+
+.container.scrollmenu{
+     background-color: #333;
+     overflow: auto;
+     white-space: nowrap;
 }

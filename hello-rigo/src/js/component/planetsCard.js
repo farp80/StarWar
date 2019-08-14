@@ -16,7 +16,8 @@ export class PlanetsCard extends React.Component {
 								let props = {
 									population: item.population,
 									name: item.name,
-									terrain: item.terrain
+									terrain: item.terrain,
+									index: index
 								};
 								return <CardHelperPlanets key={index} settings={props} />;
 							});

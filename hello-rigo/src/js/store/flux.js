@@ -38,7 +38,25 @@ const getState = ({ getStore, setStore }) => {
 			},
 			addFavorite: name => {
 				const store = getStore();
-				console.log(name);
+				var currentCharacters = store.favorites;
+				var idx = 0;
+
+				for (let i = 0; i < currentCharacters.length; i++) {
+					let f = currentCharacters[i];
+					console.log("NAME: " + name + " | " + f);
+					if (name === f) {
+						idx = i;
+					} else {
+						idx = -1;
+					}
+				}
+
+				if (idx === -1) {
+					currentCharacters.push(name);
+					setStore({ favorites: currentCharacters });
+				} else {
+					alert("The character: " + currentCharacters[idx] + " is already added!");
+				}
 			},
 			removeFavorite: () => {}
 		}

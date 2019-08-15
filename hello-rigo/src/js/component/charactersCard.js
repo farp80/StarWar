@@ -36,7 +36,10 @@ export class CharactersCard extends React.Component {
 													<Button color="primary">{"Learn more!"}</Button>
 												</Link>
 												<div className="favorite">
-													<i className="far fa-heart" />
+													<i
+														className="far fa-heart"
+														onClick={() => actions.addFavorite(item.name)}
+													/>
 												</div>
 											</CardBody>
 										</Card>

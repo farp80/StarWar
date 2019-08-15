@@ -8,7 +8,7 @@ import { Single } from "./views/single";
 import { SinglePlanet } from "./views/singlePlanet";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { NavbarStarWar } from "./component/navbarStarWar";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -22,7 +22,7 @@ export class Layout extends React.Component {
 			<div className="d-flex flex-column h-100">
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
-						<Navbar />
+						<NavbarStarWar />
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/single/:theid" component={Single} />

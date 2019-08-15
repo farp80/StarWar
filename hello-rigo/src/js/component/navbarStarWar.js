@@ -51,7 +51,7 @@ export class NavbarStarWar extends React.Component {
 												<span>
 													<i
 														className="fas fa-trash-alt"
-														onClick={() => actions.removeFavorite(value, index)}
+														onClick={() => actions.removeFavorite(index)}
 													/>
 												</span>
 											</DropdownItem>

@@ -42,10 +42,11 @@ const getState = ({ getStore, setStore }) => {
 				currentCharacters.push(name);
 				setStore({ favorites: currentCharacters });
 			},
-			removeFavorite: (name, index) => {
+			removeFavorite: index => {
 				const store = getStore();
-				var currentFavorites = store.favorites;
-				console.log("INDEX: " + index);
+				var remainder = store.favorites.filter((x, i) => i !== index);
+				console.log(remainder);
+				setStore({ favorites: remainder });
 			}
 		}
 	};

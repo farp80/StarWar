@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import starWar from "../../img/Star_war.jpg";
 import "../../styles/home.scss";
-import { Navbar, NavbarBrand, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Button, Navbar, NavbarBrand, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge } from "reactstrap";
+import { Context } from "../store/appContext";
 
 export class NavbarStarWar extends React.Component {
 	constructor(props) {
@@ -30,15 +31,34 @@ export class NavbarStarWar extends React.Component {
 						</Link>
 					</NavbarBrand>
 					<Dropdown className="justify-content-end" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-						<DropdownToggle caret>Favorites</DropdownToggle>
+						<Context.Consumer>
+							{({ store }) => {
+								return (
+									<DropdownToggle caret>
+										{"Favorites"}
+										<Badge color="secondary">{store.favorites.length}</Badge>
+									</DropdownToggle>
+								);
+							}}
+						</Context.Consumer>
 						<DropdownMenu>
-							<DropdownItem header>Header</DropdownItem>
-							<DropdownItem>Some Action</DropdownItem>
-							<DropdownItem disabled>Action (disabled)</DropdownItem>
-							<DropdownItem divider />
-							<DropdownItem>Foo Action</DropdownItem>
-							<DropdownItem>Bar Action</DropdownItem>
-							<DropdownItem>Quo Action</DropdownItem>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									return store.favorites.map((value, index) => {
+										return (
+											<DropdownItem header key={index}>
+												{value}
+												<span>
+													<i
+														className="fas fa-trash-alt"
+														onClick={() => actions.removeFavorite(value, index)}
+													/>
+												</span>
+											</DropdownItem>
+										);
+									});
+								}}
+							</Context.Consumer>
 						</DropdownMenu>
 					</Dropdown>
 				</Navbar>

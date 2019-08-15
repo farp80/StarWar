@@ -36,25 +36,17 @@ const getState = ({ getStore, setStore }) => {
 						console.log(error);
 					});
 			},
-			addFavorite: name => {
+			addFavorite: (name, index) => {
 				const store = getStore();
 				var currentCharacters = store.favorites;
-				console.log("BEFORE: " + currentCharacters);
-				var idx = 0;
-
-				for (let i = 0; i < currentCharacters.length; i++) {
-					let f = currentCharacters[i];
-					idx = f === name ? i : -1;
-				}
-
-				if (idx === -1) {
-					console.log("AFTER: " + currentCharacters);
-				}
-
 				currentCharacters.push(name);
 				setStore({ favorites: currentCharacters });
 			},
-			removeFavorite: () => {}
+			removeFavorite: (name, index) => {
+				const store = getStore();
+				var currentFavorites = store.favorites;
+				console.log("INDEX: " + index);
+			}
 		}
 	};
 };

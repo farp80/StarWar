@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export class CharactersCard extends React.Component {
 	render() {
 		return (
-			<div className="container scrolling-wrapper">
+			<div className="container container-scroll">
 				<div className="card-deck">
 					<Context.Consumer>
 						{({ store, actions }) => {
@@ -38,7 +38,7 @@ export class CharactersCard extends React.Component {
 												<div className="favorite">
 													<i
 														className="far fa-heart"
-														onClick={() => actions.addFavorite(item.name)}
+														onClick={() => actions.addFavorite(item.name, index)}
 													/>
 												</div>
 											</CardBody>

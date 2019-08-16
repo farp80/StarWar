@@ -31,7 +31,7 @@ export class NavbarStarWar extends React.Component {
 						</Link>
 					</NavbarBrand>
 					<Dropdown className="blue" isOpen={this.dropdownOpen} toggle={this.toggle}>
-						<Context.Consumer nsumer>
+						<Context.Consumer>
 							{({ store }) => {
 								return (
 									<DropdownToggle caret>

@@ -45,8 +45,13 @@ const getState = ({ getStore, setStore }) => {
 			removeFavorite: index => {
 				const store = getStore();
 				var remainder = store.favorites.filter((x, i) => i !== index);
-				console.log(remainder);
-				setStore({ favorites: remainder });
+
+				if (remainder.length === 0) {
+					remainder.push("empty");
+					setStore({ favorites: remainder });
+				} else {
+					setStore({ favorites: remainder });
+				}
 			}
 		}
 	};

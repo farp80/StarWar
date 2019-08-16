@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import starWar from "../../img/Star_war.jpg";
 import "../../styles/home.scss";
-import { Button, Navbar, NavbarBrand, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge } from "reactstrap";
+import { NavbarBrand, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { Context } from "../store/appContext";
 
 export class NavbarStarWar extends React.Component {
@@ -24,44 +24,44 @@ export class NavbarStarWar extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<Navbar color="light" light expand="md">
-					<NavbarBrand>
-						<Link to="/">
-							<img src={starWar} width="80" height="60" />
-						</Link>
-					</NavbarBrand>
-					<Dropdown className="blue" isOpen={this.dropdownOpen} toggle={this.toggle}>
-						<Context.Consumer>
-							{({ store }) => {
-								return (
-									<DropdownToggle caret>
-										{"Favorites"}
-										<Badge color="secondary">{store.favorites.length}</Badge>
-									</DropdownToggle>
-								);
-							}}
-						</Context.Consumer>
-						<DropdownMenu>
+				<nav className="navbar navbar-light bg-light mb-3 h-23">
+					<Link to="/">
+						<img src={starWar} width="80" height="60" />
+					</Link>
+					<div className="ml-auto">
+						<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 							<Context.Consumer>
-								{({ store, actions }) => {
-									return store.favorites.map((value, index) => {
-										return (
-											<DropdownItem header key={index}>
-												{value}
-												<span>
-													<i
-														className="fas fa-trash-alt"
-														onClick={() => actions.removeFavorite(index)}
-													/>
-												</span>
-											</DropdownItem>
-										);
-									});
+								{({ store }) => {
+									return (
+										<DropdownToggle caret>
+											{"Favorites"}
+											<span className="badge badge-success mr-3">{store.favorites.length}</span>
+										</DropdownToggle>
+									);
 								}}
 							</Context.Consumer>
-						</DropdownMenu>
-					</Dropdown>
-				</Navbar>
+							<DropdownMenu>
+								<Context.Consumer>
+									{({ store, actions }) => {
+										return store.favorites.map((value, index) => {
+											return (
+												<DropdownItem header key={index}>
+													{value}
+													<span>
+														<i
+															className="fas fa-trash-alt"
+															onClick={() => actions.removeFavorite(index)}
+														/>
+													</span>
+												</DropdownItem>
+											);
+										});
+									}}
+								</Context.Consumer>
+							</DropdownMenu>
+						</Dropdown>
+					</div>
+				</nav>
 			</div>
 		);
 	}

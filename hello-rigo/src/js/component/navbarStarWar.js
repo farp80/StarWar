@@ -30,8 +30,8 @@ export class NavbarStarWar extends React.Component {
 							<img src={starWar} width="80" height="60" />
 						</Link>
 					</NavbarBrand>
-					<Dropdown className="justify-content-end" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-						<Context.Consumer>
+					<Dropdown className="blue" isOpen={this.dropdownOpen} toggle={this.toggle}>
+						<Context.Consumer nsumer>
 							{({ store }) => {
 								return (
 									<DropdownToggle caret>

@@ -8,7 +8,7 @@ const learnMore = "Learn more!";
 export class PlanetsCard extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container container-scroll">
 				<div className="card-deck">
 					<Context.Consumer>
 						{({ store, actions }) => {

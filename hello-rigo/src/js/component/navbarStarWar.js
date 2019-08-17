@@ -44,17 +44,25 @@ export class NavbarStarWar extends React.Component {
 								<Context.Consumer>
 									{({ store, actions }) => {
 										return store.favorites.map((value, index) => {
-											return (
-												<DropdownItem header key={index}>
-													{value}
-													<span>
-														<i
-															className="fas fa-trash-alt"
-															onClick={() => actions.removeFavorite(index)}
-														/>
-													</span>
-												</DropdownItem>
-											);
+											if (value === "empty") {
+												return (
+													<DropdownItem header key={index}>
+														{value}
+													</DropdownItem>
+												);
+											} else {
+												return (
+													<DropdownItem header key={index}>
+														{value}
+														<span>
+															<i
+																className="fas fa-trash-alt"
+																onClick={() => actions.removeFavorite(index)}
+															/>
+														</span>
+													</DropdownItem>
+												);
+											}
 										});
 									}}
 								</Context.Consumer>
